@@ -1,6 +1,10 @@
 # canvas-move-in-grid
 learning by doing, lets try make joystick and move inside canvas
 
+by the way.
+making every move save one PNG picture in users computer
+later joining them in a gif.
+
 update.
 joystick is made, and also canvas save as png file in browsers default downloads page.
 next i think should hide and show certain buttons, according to gameplay.
