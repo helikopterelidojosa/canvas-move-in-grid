@@ -19,10 +19,22 @@ function setCanvasBackgroundColor(color){
 ctx.fillStyle = "white";
 ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-//location of the square
+//location of the select-square
 let x = 0;
 let y = 0;
 
+//number of the moves
+let moveCount = 0;
+let gameName;
+var fileName;
+
+let ifItMoves = false;
+
+let LastMovex;
+let LastMovey;
+
+let LastMovexx;
+let LastMoveyy;
 
 
 //selectSquareSize = squareCanvas/8;
@@ -48,18 +60,32 @@ function selectSquare(x, y){
 function moveSquareUp(){
     y -= selectSquareSize;
     selectSquare(x,y,"white");
+    if(ifItMoves == true){
+        document.getElementById("btn-submit").style.display = "block";
+    }
+    
     
 }
 function moveSquareDown(){
     y += selectSquareSize;
     selectSquare(x,y,"black");
+    if(ifItMoves == true){
+        document.getElementById("btn-submit").style.display = "block";
+    }
 }
 function moveSquareLeft(){
     x -= selectSquareSize;
     selectSquare(x,y,"");
+    if(ifItMoves == true){
+        document.getElementById("btn-submit").style.display = "block";
+    }
 }
 function moveSquareRight(){
     x += selectSquareSize;
+    if(ifItMoves == true){
+        document.getElementById("btn-submit").style.display = "block";
+    }
+
 }
 
 // chess board
@@ -89,10 +115,37 @@ function selectPc(xx, yy, color){
 
 
 function startGame(){
-    x=0;
-    y=0;
+    // main display:block
+    document.getElementById("main").style.display = "flex";
+    document.getElementById("btn-start").style.display = "none";
+    document.querySelector("h1").style.display = "none";
     chessBoard();
+   //chessPieces();
+    x=200;
+    y=300;
     selectSquare(x,y,);
+    var randomString = function(length) {
+        var text = "Chess-";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for (var i = 0; i < length; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+    }
+
+    //filename
+    gameName = randomString(6);
+    fileName = gameName + "-move-" + moveCount + ".png";
+    saveCanvas(fileName);
+   
+
+
+    
+    
+
+
+
     
 }
 
@@ -106,20 +159,55 @@ function loadCanvas(){
 }
 
 function startMove(){
+    document.getElementById("btn-start-move").style.display = "none";
+    ifItMoves = true;
     selectPc(x,y,"green");
+    LastMovexx = x;
+    LastMoveyy = y;
 
 }
 
 function submitMove(){
-    
+    document.getElementById("btn-submit").style.display = "none";
+    document.getElementById("btn-new-move").style.display = "block";
+
     selectPc(x,y,"yellow");
+
+    
+    
+    LastMovex = x;
+    LastMovey = y;
+
+
+
+    
+    moveCount++;
+    fileName = gameName + "-move-" + moveCount + ".png";
+    saveCanvas(fileName);
+    
+}
+
+function    newMove(){
+    document.getElementById("btn-new-move").style.display = "none";
+    document.getElementById("btn-submit").style.display = "none";
+    document.getElementById("btn-start-move").style.display = "block";
+    ifItMoves = false;
+
+    if((LastMovex+100)%100 == 0 && (LastMovey+100)%100 == 0){
+        selectPc(LastMovex,LastMovey,"white");}
+    else{selectPc(LastMovex,LastMovey,"black");}
+
+    if((LastMovexx+100)%100 == 0 && (LastMoveyy+100)%100 == 0){
+        selectPc(LastMovexx,LastMoveyy,"white");}
+    else{selectPc(LastMovexx,LastMoveyy,"black");}
+
 }
 
 
 
 // save the canvas enter file name
-function saveCanvas(){
-    let fileName = document.getElementById("fileName").value;
+function saveCanvas(name){
+    let fileName = name;
     let link = document.createElement('a');
     link.download = fileName;
     link.href = myCanvas.toDataURL("image/png");

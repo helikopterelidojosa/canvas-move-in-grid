@@ -18,23 +18,31 @@
     <!-- start body -->
     <body>
         <!-- canvas -->
-        <button onclick="startGame()">Start game</button>
-        <canvas id="myCanvas" onload="loadCanvas()"></canvas>
+        <h1>Chess</h1>
+
+        <button id="btn-start" onclick="startGame()">Start new game</button>
+        <main id="main" style="display: none;">
+        <canvas id="myCanvas"></canvas>
         <!-- buttons up down right left onclick -->
+        <div id="arrow-keys">
         <button onclick="moveSquareUp()">Up</button>
         <button onclick="moveSquareDown()">Down</button>
-        <button onclick="moveSquareRight()">Right</button>
         <button onclick="moveSquareLeft()">Left</button>
+        <button onclick="moveSquareRight()">Right</button>
+        </div>
         <!-- buttons select submit -->
-        <button onclick="startMove()">Start move</button>
-        <button onclick="submitMove()">Submit move</button>
+        <button id="btn-start-move" onclick="startMove()">Start move</button>
+        <button id="btn-submit" onclick="submitMove()" style="display: none;">Submit move</button>
+        <button id="btn-new-move" onclick="newMove()" style="display: none;">New move</button>
 <br>
         <!-- input#fileName -->
 image fileName:
-        <input type="text" id="fileName" value="chess-moves">
+        <input type="text" id="fileName">
         <!-- button save -->
         <button onclick="saveCanvas()">Save image</button>
 
+
+    </main>
         <!-- basic js -->
         <script src="app.js"></script>
     </body>

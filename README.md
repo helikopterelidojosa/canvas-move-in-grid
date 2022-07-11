@@ -8,3 +8,9 @@ make some div tags and put buttons inside and show/hide the divs according to ga
 should make all pieces and make an object variable for each to track their location.
 should make coordinates included in the chessBoard() function.
 feel a little bit confused in a big number of functions inside js file.
+
+update.
+at least I made the button thing working
+next.
+should make all pieces and make an object variable for each to track their location.
+should make coordinates included in the chessBoard() function.
