@@ -19,20 +19,23 @@ function setCanvasBackgroundColor(color){
 ctx.fillStyle = "white";
 ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-//location of the select-square
-let x = 0;
-let y = 0;
+//location of the selector-square
+let x;
+let y;
 
-//number of the moves
+//number of the moves to make file name
 let moveCount = 0;
 let gameName;
 var fileName;
 
 let ifItMoves = false;
 
+//to register the move 
+//and draw a clear chess squares after move
+//start of the move coordinates
 let LastMovex;
 let LastMovey;
-
+//end of the move coordinates
 let LastMovexx;
 let LastMoveyy;
 
@@ -97,7 +100,7 @@ function chessBoard(){
                 
             }
             else{
-                ctx.fillStyle = "black";
+                ctx.fillStyle = "grey";
                 
             }
             ctx.fillRect(i * selectSquareSize, j * selectSquareSize, selectSquareSize, selectSquareSize);
@@ -161,7 +164,7 @@ function loadCanvas(){
 function startMove(){
     document.getElementById("btn-start-move").style.display = "none";
     ifItMoves = true;
-    selectPc(x,y,"green");
+    selectPc(x,y,"yellow");
     LastMovexx = x;
     LastMoveyy = y;
 
@@ -195,11 +198,11 @@ function    newMove(){
 
     if((LastMovex+100)%100 == 0 && (LastMovey+100)%100 == 0){
         selectPc(LastMovex,LastMovey,"white");}
-    else{selectPc(LastMovex,LastMovey,"black");}
+    else{selectPc(LastMovex,LastMovey,"grey");}
 
     if((LastMovexx+100)%100 == 0 && (LastMoveyy+100)%100 == 0){
         selectPc(LastMovexx,LastMoveyy,"white");}
-    else{selectPc(LastMovexx,LastMoveyy,"black");}
+    else{selectPc(LastMovexx,LastMoveyy,"grey");}
 
 }
 
@@ -213,6 +216,4 @@ function saveCanvas(name){
     link.href = myCanvas.toDataURL("image/png");
     link.click();
 }
-
-
 

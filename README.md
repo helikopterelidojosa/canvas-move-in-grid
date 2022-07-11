@@ -17,4 +17,4 @@ update.
 at least I made the button thing working
 next.
 should make all pieces and make an object variable for each to track their location.
-should make coordinates included in the chessBoard() function.
+should make squares a-h 1-8 coordinates included in the chessBoard() function.
