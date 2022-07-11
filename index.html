@@ -18,7 +18,12 @@
     <!-- start body -->
     <body>
         <!-- canvas -->
-        <canvas id="myCanvas"></canvas>
+        <canvas id="myCanvas" onload="loadCanvas()"></canvas>
+        <!-- buttons up down right left onclick -->
+        <button onclick="moveSquareUp()">Up</button>
+        <button onclick="moveSquareDown()">Down</button>
+        <button onclick="moveSquareRight()">Right</button>
+        <button onclick="moveSquareLeft()">Left</button>
         <!-- basic js -->
         <script src="app.js"></script>
     </body>
