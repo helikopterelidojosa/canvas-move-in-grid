@@ -69,7 +69,11 @@ function chessBoard(){
     }
 }
 
-   
+function selectPc(xx, yy, color){
+    
+    ctx.fillStyle = color;
+    ctx.fillRect(xx, yy, selectSquareSize, selectSquareSize);
+} 
 
 
 
@@ -79,5 +83,6 @@ setInterval(loadCanvas, 500);
 function loadCanvas(){
 chessBoard();
     selectSquare(x,y,"red");
+    selectPc(x,y,"yellow");
 }
 
