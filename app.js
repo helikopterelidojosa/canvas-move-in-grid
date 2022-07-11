@@ -24,15 +24,21 @@ let x = 0;
 let y = 0;
 
 
+
 //selectSquareSize = squareCanvas/8;
 var selectSquareSize = squareCanvas/8;
 // draw a stroke square size of selectSquare
-function selectSquare(x, y, color){ 
+function selectSquare(x, y){ 
 
-    //beginPath();
+    //randomize the color of the square rgb(0,0,0) to rgb(255,255,255)
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let color = "rgb(" + r + "," + g + "," + b + ")";
+
     
     ctx.strokeStyle = color;
-    ctx.lineWidth = 4;
+    ctx.lineWidth = 2;
     ctx.strokeRect(x, y, selectSquareSize, selectSquareSize); 
     
 }
@@ -41,13 +47,16 @@ function selectSquare(x, y, color){
 //directions for the square
 function moveSquareUp(){
     y -= selectSquareSize;
+    selectSquare(x,y,"white");
     
 }
 function moveSquareDown(){
     y += selectSquareSize;
+    selectSquare(x,y,"black");
 }
 function moveSquareLeft(){
     x -= selectSquareSize;
+    selectSquare(x,y,"");
 }
 function moveSquareRight(){
     x += selectSquareSize;
@@ -70,19 +79,50 @@ function chessBoard(){
 }
 
 function selectPc(xx, yy, color){
-    
+
     ctx.fillStyle = color;
     ctx.fillRect(xx, yy, selectSquareSize, selectSquareSize);
 } 
 
 
 
-//load all the functions
-setInterval(loadCanvas, 500);
+function startGame(){
+    x=0;
+    y=0;
+    chessBoard();
+    selectSquare(x,y,);
+    
+}
 
+
+//choose whwere to go, move the square
+setInterval(loadCanvas, 500);
 function loadCanvas(){
-chessBoard();
-    selectSquare(x,y,"red");
+
+     selectSquare(x,y,);
+    
+}
+
+function startMove(){
+    selectPc(x,y,"green");
+
+}
+
+function submitMove(){
+    
     selectPc(x,y,"yellow");
 }
+
+
+
+// save the canvas enter file name
+function saveCanvas(){
+    let fileName = document.getElementById("fileName").value;
+    let link = document.createElement('a');
+    link.download = fileName;
+    link.href = myCanvas.toDataURL("image/png");
+    link.click();
+}
+
+
 

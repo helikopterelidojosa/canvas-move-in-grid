@@ -18,6 +18,7 @@
     <!-- start body -->
     <body>
         <!-- canvas -->
+        <button onclick="startGame()">Start game</button>
         <canvas id="myCanvas" onload="loadCanvas()"></canvas>
         <!-- buttons up down right left onclick -->
         <button onclick="moveSquareUp()">Up</button>
@@ -25,8 +26,15 @@
         <button onclick="moveSquareRight()">Right</button>
         <button onclick="moveSquareLeft()">Left</button>
         <!-- buttons select submit -->
-        <button onclick="selectPc()">Select</button>
+        <button onclick="startMove()">Start move</button>
         <button onclick="submitMove()">Submit move</button>
+<br>
+        <!-- input#fileName -->
+image fileName:
+        <input type="text" id="fileName" value="chess-moves">
+        <!-- button save -->
+        <button onclick="saveCanvas()">Save image</button>
+
         <!-- basic js -->
         <script src="app.js"></script>
     </body>
