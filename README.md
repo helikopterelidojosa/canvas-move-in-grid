@@ -18,3 +18,6 @@ at least I made the button thing working
 next.
 should make all pieces and make an object variable for each to track their location.
 should make squares a-h 1-8 coordinates included in the chessBoard() function.
+
+update.
+think that chess-squares will be stored individually as a parametres in a one big object by doing a move, they will be redrawn

@@ -206,12 +206,10 @@ var pieces = {
         y:0
     }
 
-
-
-
-
-
 };
+
+//
+
 
 //selectSquareSize = squareCanvas/8;
 var selectSquareSize = squareCanvas/8;
@@ -314,16 +312,7 @@ function startGame(){
     //filename
     gameName = randomString(6);
     fileName = gameName + "-move-" + moveCount + ".png";
-    saveCanvas(fileName);
-   
-
-
-    
-    
-
-
-
-    
+    saveCanvas(fileName);    
 }
 
 
@@ -331,7 +320,7 @@ function startGame(){
 setInterval(loadCanvas, 500);
 function loadCanvas(){
 
-     selectSquare(x,y,);
+     selectSquare(x,y);
      chessPieces(pieces.white_Pawn_A.img, pieces.white_Pawn_A.x, pieces.white_Pawn_A.y);
         chessPieces(pieces.white_Pawn_B.img, pieces.white_Pawn_B.x, pieces.white_Pawn_B.y);
         chessPieces(pieces.white_Pawn_C.img, pieces.white_Pawn_C.x, pieces.white_Pawn_C.y);
@@ -366,7 +355,7 @@ function loadCanvas(){
         chessPieces(pieces.black_Bishop_F.img, pieces.black_Bishop_F.x, pieces.black_Bishop_F.y);
         chessPieces(pieces.black_Queen.img, pieces.black_Queen.x, pieces.black_Queen.y);
         chessPieces(pieces.black_King.img, pieces.black_King.x, pieces.black_King.y);
-        
+
 
      
     
@@ -386,12 +375,10 @@ function submitMove(){
     document.getElementById("btn-new-move").style.display = "block";
 
     selectPc(x,y,"yellow");
-
-    
-    
     LastMovex = x;
     LastMovey = y;
 
+    
 
 
     
