@@ -67,10 +67,12 @@ function chessBoard(){
     for(let i = 0; i < 8; i++){
         for(let j = 0; j < 8; j++){
             if((i + j) % 2 == 0){
-                ctx.fillStyle = "black";
+                ctx.fillStyle = "white";
+                
             }
             else{
-                ctx.fillStyle = "white";
+                ctx.fillStyle = "black";
+                
             }
             ctx.fillRect(i * selectSquareSize, j * selectSquareSize, selectSquareSize, selectSquareSize);
 
