@@ -39,6 +39,179 @@ let LastMovey;
 let LastMovexx;
 let LastMoveyy;
 
+var pieces = {
+    white_Pawn_A: {
+        img:"white-pawn-a",
+        x:0,
+        y:300
+        
+    },
+    white_Pawn_B: {
+        img:"white-pawn-b",
+        x:50,
+        y:300 
+    },
+    white_Pawn_C: {
+        img:"white-pawn-c",
+        x:100,
+        y:300
+    },
+    white_Pawn_D: {
+        img:"white-pawn-d",
+        x:150,
+        y:300
+    },
+    white_Pawn_E: {
+        img:"white-pawn-e",
+        x:200,
+        y:300
+    },
+    white_Pawn_F: {
+        img:"white-pawn-f",
+        x:250,
+        y:300
+    },
+    white_Pawn_G: {
+        img:"white-pawn-g",
+        x:300,
+        y:300
+    },
+    white_Pawn_H: {
+        img:"white-pawn-h",
+        x:350,
+        y:300
+    },
+    white_Rook_A: {
+        img:"white-rook-a",
+        x:0,
+        y:350
+    },
+    white_Rook_H: {
+        img:"white-rook-h",
+        x:350,
+        y:350
+    },
+    white_Knight_B: {
+        img:"white-knight-b",
+        x:50,
+        y:350
+    },
+    white_Knight_G: {
+        img:"white-knight-g",
+        x:300,
+        y:350
+    },
+    white_Bishop_C: {
+        img:"white-bishop-c",
+        x:100,
+        y:350
+    },
+    white_Bishop_F: {
+        img:"white-bishop-f",
+        x:250,
+        y:350
+    },
+    white_Queen: {
+        img:"white-queen",
+        x:150,
+        y:350
+    },
+    white_King: {
+        img:"white-king",
+        x:200,
+        y:350
+    },
+    //black pieces
+
+    black_Pawn_A: {
+        img:"black-pawn-a",
+        x:0,
+        y:50
+    },
+    black_Pawn_B: {
+        img:"black-pawn-b",
+        x:50,
+        y:50
+    },
+    black_Pawn_C: {
+        img:"black-pawn-c",
+        x:100,
+        y:50
+    },
+    black_Pawn_D: {
+        img:"black-pawn-d",
+        x:150,
+        y:50
+    },
+    black_Pawn_E: {
+
+        img:"black-pawn-e",
+        x:200,
+        y:50
+    },
+    black_Pawn_F: {
+        img:"black-pawn-f",
+        x:250,
+        y:50
+    },
+    black_Pawn_G: {
+        img:"black-pawn-g",
+        x:300,
+        y:50
+    },
+    black_Pawn_H: {
+        img:"black-pawn-h",
+        x:350,
+        y:50
+    },
+    black_Rook_A: {
+        img:"black-rook-a",
+        x:0,
+        y:0
+    },
+    black_Rook_H: {
+        img:"black-rook-h",
+        x:350,
+        y:0
+    },
+    black_Knight_B: {
+        img:"black-knight-b",
+        x:50,
+        y:0
+    },
+    black_Knight_G: {
+        img:"black-knight-g",
+        x:300,
+        y:0
+    },
+
+    black_Bishop_C: {
+        img:"black-bishop-c",
+        x:100,
+        y:0
+    },
+    black_Bishop_F: {
+        img:"black-bishop-f",
+        x:250,
+        y:0
+    },
+    black_Queen: {
+        img:"black-queen",
+        x:150,
+        y:0
+    },
+    black_King: {
+        img:"black-king",
+        x:200,
+        y:0
+    }
+
+
+
+
+
+
+};
 
 //selectSquareSize = squareCanvas/8;
 var selectSquareSize = squareCanvas/8;
@@ -113,6 +286,7 @@ function selectPc(xx, yy, color){
 
     ctx.fillStyle = color;
     ctx.fillRect(xx, yy, selectSquareSize, selectSquareSize);
+
 } 
 
 
@@ -158,6 +332,43 @@ setInterval(loadCanvas, 500);
 function loadCanvas(){
 
      selectSquare(x,y,);
+     chessPieces(pieces.white_Pawn_A.img, pieces.white_Pawn_A.x, pieces.white_Pawn_A.y);
+        chessPieces(pieces.white_Pawn_B.img, pieces.white_Pawn_B.x, pieces.white_Pawn_B.y);
+        chessPieces(pieces.white_Pawn_C.img, pieces.white_Pawn_C.x, pieces.white_Pawn_C.y);
+        chessPieces(pieces.white_Pawn_D.img, pieces.white_Pawn_D.x, pieces.white_Pawn_D.y);
+        chessPieces(pieces.white_Pawn_E.img, pieces.white_Pawn_E.x, pieces.white_Pawn_E.y);
+        chessPieces(pieces.white_Pawn_F.img, pieces.white_Pawn_F.x, pieces.white_Pawn_F.y);
+        chessPieces(pieces.white_Pawn_G.img, pieces.white_Pawn_G.x, pieces.white_Pawn_G.y);
+        chessPieces(pieces.white_Pawn_H.img, pieces.white_Pawn_H.x, pieces.white_Pawn_H.y);
+        chessPieces(pieces.white_Rook_A.img, pieces.white_Rook_A.x, pieces.white_Rook_A.y);
+        chessPieces(pieces.white_Rook_H.img, pieces.white_Rook_H.x, pieces.white_Rook_H.y);
+        chessPieces(pieces.white_Knight_B.img, pieces.white_Knight_B.x, pieces.white_Knight_B.y);
+        chessPieces(pieces.white_Knight_G.img, pieces.white_Knight_G.x, pieces.white_Knight_G.y);
+        chessPieces(pieces.white_Bishop_C.img, pieces.white_Bishop_C.x, pieces.white_Bishop_C.y);
+        chessPieces(pieces.white_Bishop_F.img, pieces.white_Bishop_F.x, pieces.white_Bishop_F.y);
+        chessPieces(pieces.white_Queen.img, pieces.white_Queen.x, pieces.white_Queen.y);
+        chessPieces(pieces.white_King.img, pieces.white_King.x, pieces.white_King.y);
+        chessPieces(pieces.black_Pawn_A.img, pieces.black_Pawn_A.x, pieces.black_Pawn_A.y);
+
+        chessPieces(pieces.black_Pawn_B.img, pieces.black_Pawn_B.x, pieces.black_Pawn_B.y);
+        chessPieces(pieces.black_Pawn_C.img, pieces.black_Pawn_C.x, pieces.black_Pawn_C.y);
+        chessPieces(pieces.black_Pawn_D.img, pieces.black_Pawn_D.x, pieces.black_Pawn_D.y);
+
+        chessPieces(pieces.black_Pawn_E.img, pieces.black_Pawn_E.x, pieces.black_Pawn_E.y);
+        chessPieces(pieces.black_Pawn_F.img, pieces.black_Pawn_F.x, pieces.black_Pawn_F.y);
+        chessPieces(pieces.black_Pawn_G.img, pieces.black_Pawn_G.x, pieces.black_Pawn_G.y);
+        chessPieces(pieces.black_Pawn_H.img, pieces.black_Pawn_H.x, pieces.black_Pawn_H.y);
+        chessPieces(pieces.black_Rook_A.img, pieces.black_Rook_A.x, pieces.black_Rook_A.y);
+        chessPieces(pieces.black_Rook_H.img, pieces.black_Rook_H.x, pieces.black_Rook_H.y);
+        chessPieces(pieces.black_Knight_B.img, pieces.black_Knight_B.x, pieces.black_Knight_B.y);
+        chessPieces(pieces.black_Knight_G.img, pieces.black_Knight_G.x, pieces.black_Knight_G.y);
+        chessPieces(pieces.black_Bishop_C.img, pieces.black_Bishop_C.x, pieces.black_Bishop_C.y);
+        chessPieces(pieces.black_Bishop_F.img, pieces.black_Bishop_F.x, pieces.black_Bishop_F.y);
+        chessPieces(pieces.black_Queen.img, pieces.black_Queen.x, pieces.black_Queen.y);
+        chessPieces(pieces.black_King.img, pieces.black_King.x, pieces.black_King.y);
+        
+
+     
     
 }
 
@@ -216,4 +427,14 @@ function saveCanvas(name){
     link.href = myCanvas.toDataURL("image/png");
     link.click();
 }
+
+//chess pieces
+function chessPieces(id, x, y){
+    var img= document.getElementById(id);
+    ctx.drawImage(img, x, y);
+}
+
+
+
+    
 
