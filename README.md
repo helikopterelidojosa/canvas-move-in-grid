@@ -21,3 +21,6 @@ should make squares a-h 1-8 coordinates included in the chessBoard() function.
 
 update.
 think that chess-squares will be stored individually as a parametres in a one big object by doing a move, they will be redrawn
+
+UPDATE.
+IM STUCK. HAVE NO IDEA HOW TO DO THIS
