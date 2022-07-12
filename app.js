@@ -209,6 +209,20 @@ var pieces = {
 };
 
 //
+var chessSquares = {
+    a8: {
+        x:0,
+        y:0,
+        background:"white",
+        piece:"black_Rook_A",
+        img:pieces.black_Rook_A.img
+    },
+    b8: {
+        x:50,
+        y:0,
+        background:"black",
+        piece:"black_Knight_B",
+        
 
 
 //selectSquareSize = squareCanvas/8;
@@ -233,7 +247,7 @@ function selectSquare(x, y){
 //directions for the square
 function moveSquareUp(){
     y -= selectSquareSize;
-    selectSquare(x,y,"white");
+    
     if(ifItMoves == true){
         document.getElementById("btn-submit").style.display = "block";
     }
@@ -242,14 +256,14 @@ function moveSquareUp(){
 }
 function moveSquareDown(){
     y += selectSquareSize;
-    selectSquare(x,y,"black");
+    
     if(ifItMoves == true){
         document.getElementById("btn-submit").style.display = "block";
     }
 }
 function moveSquareLeft(){
     x -= selectSquareSize;
-    selectSquare(x,y,"");
+    
     if(ifItMoves == true){
         document.getElementById("btn-submit").style.display = "block";
     }
@@ -278,13 +292,12 @@ function chessBoard(){
 
         }
     }
+
 }
 
 function selectPc(xx, yy, color){
-
     ctx.fillStyle = color;
     ctx.fillRect(xx, yy, selectSquareSize, selectSquareSize);
-
 } 
 
 
@@ -317,7 +330,8 @@ function startGame(){
 
 
 //choose whwere to go, move the square
-setInterval(loadCanvas, 500);
+setInterval(loadCanvas, 1000);
+
 function loadCanvas(){
 
      selectSquare(x,y);
@@ -354,11 +368,7 @@ function loadCanvas(){
         chessPieces(pieces.black_Bishop_C.img, pieces.black_Bishop_C.x, pieces.black_Bishop_C.y);
         chessPieces(pieces.black_Bishop_F.img, pieces.black_Bishop_F.x, pieces.black_Bishop_F.y);
         chessPieces(pieces.black_Queen.img, pieces.black_Queen.x, pieces.black_Queen.y);
-        chessPieces(pieces.black_King.img, pieces.black_King.x, pieces.black_King.y);
-
-
-     
-    
+        chessPieces(pieces.black_King.img, pieces.black_King.x, pieces.black_King.y);   
 }
 
 function startMove(){
@@ -367,6 +377,7 @@ function startMove(){
     selectPc(x,y,"yellow");
     LastMovexx = x;
     LastMoveyy = y;
+    
 
 }
 
@@ -378,7 +389,7 @@ function submitMove(){
     LastMovex = x;
     LastMovey = y;
 
-    
+
 
 
     
@@ -420,6 +431,8 @@ function chessPieces(id, x, y){
     var img= document.getElementById(id);
     ctx.drawImage(img, x, y);
 }
+
+
 
 
 
